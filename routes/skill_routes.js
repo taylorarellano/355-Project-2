@@ -44,7 +44,7 @@ router.get('/add', function(req, res){
             res.send(err);
         }
         else {
-            res.render('skill/skillAdd', {'account': result});
+            res.render('skill/skillViewAdd', {'account': result});
         }
     });
 });
