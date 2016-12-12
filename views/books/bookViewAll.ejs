@@ -1,0 +1,31 @@
+<html>
+<head>
+    <title>Books</title>
+</head>
+<body>
+<h1>Books</h1>
+<a href="/books/add">Add New Book</a> <br />
+
+<br />
+
+
+<table border="1">
+    <tr><th>Title</th><th>Author</th><th>Year</th><th>Genre</th><th>Action</th></tr>
+    <% for(var i=0; result.length > i; i++ ) { %>
+    <tr>
+        <td><a href="/books/?title=<%= result[i].title%>"><%= result[i].title%></a></td>
+        <td><%= result[i].author %></td><td><%= result[i].year %></td> <td><%= result[i].genre %></td>
+
+        <td>
+            <button onclick="event.preventDefault();window.location.href='/books/edit2/?title=<%= result[i].title %>'">Edit</button>
+            <form action="/books/delete/">
+                <input type="hidden" name="title" id="title" value="<%= result[i].title %>" />
+                <input type="submit" value="Delete"/>
+            </form>
+        </td>
+    </tr>
+    <% } %>
+</table>
+</body>
+
+</html>

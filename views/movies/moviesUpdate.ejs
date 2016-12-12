@@ -1,0 +1,22 @@
+<html>
+<head>
+    <title>Update <%= movies.title%></title>
+</head>
+<body>
+<h1>Update <%= movies.title%></h1>
+<form action="/movies/update" method="get">
+    <input type="hidden" id="title" name="title" value="<%= books.title %>">
+    Book Author: <input id="genres" name="genres" type="text" value="<%= books.genres%>">
+    Book Year: <input id="year" name="year" type="text" value="<%= books.year%>">
+    Book Director: <input id="director" name="director" type="text" value="<%= books.director%>"/>
+    Book Book Title: <input id="book_title" name="book_title" type="text" value="<%= books.book_title%>">
+
+    <br />
+    <br />
+
+    <input type="submit" />
+
+</form>
+</body>
+
+</html>
