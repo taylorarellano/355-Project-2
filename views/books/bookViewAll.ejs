@@ -14,7 +14,7 @@
     <% for(var i=0; result.length > i; i++ ) { %>
     <tr>
         <td><a href="/books/?title=<%= result[i].title%>"><%= result[i].title%></a></td>
-        <td><%= result[i].author %></td><td><%= result[i].year %></td> <td><%= result[i].genre %></td>
+        <td><%= result[i].author %></td><td><%= result[i].year_publication %></td> <td><%= result[i].genres %></td>
 
         <td>
             <button onclick="event.preventDefault();window.location.href='/books/edit2/?title=<%= result[i].title %>'">Edit</button>
