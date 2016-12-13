@@ -1,9 +1,9 @@
 <html>
 <head>
-    <title>Update <%= books.author%></title>
+    <title>Update <%= books.title%></title>
 </head>
 <body>
-<h1>Update <%= books.author%></h1>
+<h1>Update <%= books.title%></h1>
 <form action="/books/update" method="get">
     <input type="hidden" id="title" name="title" value="<%= books.title %>">
     Book Author: <input id="author" name="author" type="text" value="<%= books.author%>">
