@@ -9,7 +9,13 @@
     Movie Genres: <input id="genres" name="genres" type="genres" />
     Movie Year: <input id="year" name="year" type="year" />
     Movie Director: <input id="director" name="director" type="director" />
-    Movie Book Title: <input id="book_title" name="book_title" type="book_title" />
+    Movie Book Title:
+    <select id="title" name="title">
+        <% for(var i=0; title.length > i; i++ ) { %>
+        <option value="<%= title[i].title %>"><%= title[i].book_title %></option>
+        <% } %>
+    </select>
+
     <br />
     <br />
 

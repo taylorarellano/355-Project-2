@@ -35,17 +35,17 @@ router.get('/', function(req, res){
 });
 
 // Return the add a new movies form
-router.get('/add', function(req, res){
+router.get('/add', function(req, res) {
     // passing all the query parameters (req.query) to the insert function instead of each individually
-    movies_dal.getAll(function(err,result) {
-        if (err) {
-            res.send(err);
-        }
-        else {
-            res.render('movies/moviesAdd', {'title': result});
-        }
+    movies_dal.getAll(function (err, result) {
+            if (err) {
+                res.send(err);
+            }
+            else {
+                res.render('movies/moviesAdd', {'title': result});
+            }
+        });
     });
-});
 
 // insert a movies record
 router.get('/insert', function(req, res){
