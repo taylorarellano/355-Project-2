@@ -17,10 +17,10 @@
         <td><%= result[i].author %></td><td><%= result[i].year_publication %></td> <td><%= result[i].genres %></td>
 
         <td>
-            <button onclick="event.preventDefault();window.location.href='/books/edit2/?title=<%= result[i].title %>'">Edit</button>
             <form action="/books/delete/">
                 <input type="hidden" name="title" id="title" value="<%= result[i].title %>" />
                 <input type="submit" value="Delete"/>
+            <button onclick="event.preventDefault();window.location.href='/books/edit2/?title=<%= result[i].title %>'">Edit</button>
             </form>
         </td>
     </tr>

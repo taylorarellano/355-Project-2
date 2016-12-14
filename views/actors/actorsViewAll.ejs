@@ -1,0 +1,31 @@
+<html>
+<head>
+    <title>Actors</title>
+</head>
+<body>
+<h1>Actors</h1>
+<a href="/actors/add">Add New Actor</a> <br />
+
+<br />
+
+
+<table border="1">
+    <tr><th>Name</th><th>Height</th><th>Gender</th><th>Age</th></tr>
+    <% for(var i=0; result.length > i; i++ ) { %>
+    <tr>
+        <td><a href="/actors/?name=<%= result[i].name%>"><%= result[i].name%></a></td>
+        <td><%= result[i].height%></td><td><%= result[i].gender%></td> <td><%= result[i].age %></td>
+
+        <td>
+            <form action="/actors/delete/">
+                <input type="hidden" name="name" id="name" value="<%= result[i].name %>" />
+                <input type="submit" value="Delete"/>
+                <button onclick="event.preventDefault();window.location.href='/actors/edit2/?title=<%= result[i].title %>'">Edit</button>
+            </form>
+        </td>
+    </tr>
+    <% } %>
+</table>
+</body>
+
+</html>

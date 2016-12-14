@@ -11,16 +11,16 @@ var connection = mysql.createConnection(db.config);
  */
 
 exports.getAll = function(callback) {
-    var query = 'SELECT * FROM movies;';
+    var query = 'SELECT * FROM actors;';
 
     connection.query(query, function(err, result) {
         callback(err, result);
     });
 };
 
-exports.getById = function(title, callback) {
-    var query = 'SELECT * FROM movies WHERE title = ?';
-    var queryData = [title];
+exports.getById = function(name, callback) {
+    var query = 'SELECT * FROM actors WHERE name = ?';
+    var queryData = [name];
 
     connection.query(query, queryData, function(err, result) {
         callback(err, result);
@@ -28,11 +28,11 @@ exports.getById = function(title, callback) {
 };
 
 exports.insert = function(params, callback) {
-    var query = 'INSERT INTO movies (title, genres, year, director, book_title) VALUES (?, ?, ?, ?, ?)';
+    var query = 'INSERT INTO actors (name, height, gender, age) VALUES (?, ?, ?, ?)';
 
     // the question marks in the sql query above will be replaced by the values of the
     // the data in queryData
-    var queryData = [params.title, params.genres, params.year, params.director, params.book_title];
+    var queryData = [params.name, params.height, params.gender, params.age];
 
     connection.query(query, queryData, function(err, result) {
         callback(err, result);
@@ -40,9 +40,9 @@ exports.insert = function(params, callback) {
 
 }
 
-exports.delete = function(title, callback) {
-    var query = 'DELETE FROM movies WHERE title = ?';
-    var queryData = [title];
+exports.delete = function(name, callback) {
+    var query = 'DELETE FROM actors WHERE name = ?';
+    var queryData = [name];
 
     connection.query(query, queryData, function(err, result) {
         callback(err, result);
@@ -51,8 +51,8 @@ exports.delete = function(title, callback) {
 };
 
 exports.update = function(params, callback) {
-    var query = 'UPDATE movies SET title = ?, genres = ?, year = ?, director = ?, book_title = ? WHERE title = ?';
-    var queryData = [params.title[1], params.genres, params.year, params.director, params.book_title, params.title[0]];
+    var query = 'UPDATE actors SET name = ?, height = ?, gender = ?, age = ?, WHERE name = ?';
+    var queryData = [params.name, params.height, params.gender, params.age, params.name];
 
     connection.query(query, queryData, function(err, result) {
         callback(err, result);
@@ -73,9 +73,9 @@ exports.update = function(params, callback) {
  CALL school_getinfo (4);
  */
 
-exports.edit = function(title, callback) {
-    var query = 'CALL movies';
-    var queryData = [title];
+exports.edit = function(name, callback) {
+    var query = 'CALL actors';
+    var queryData = [name];
 
     connection.query(query, queryData, function(err, result) {
         callback(err, result);

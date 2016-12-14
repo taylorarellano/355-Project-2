@@ -1,0 +1,22 @@
+<html>
+<head>
+    <title>Update <%= actors.name%></title>
+</head>
+<body>
+<h1>Update <%= actors.name%></h1>
+<form action="/actors/update" method="get">
+    <input type="hidden" id="name" name="name" value="<%= actors.name %>">
+    Actor Name: <input id="name" name="name" type="text" value="<%= actors.name%>">
+    Actor Height: <input id="height" name="height" type="text" value="<%= actors.height%>">
+    Actor Gender: <input id="gender" name="gender" type="text" value="<%= actors.gender%>"/>
+    Actor Age: <input id="age" name="age" type="text" value="<%= actors.age%>"/>
+
+    <br />
+    <br />
+
+    <input type="submit" />
+
+</form>
+</body>
+
+</html>

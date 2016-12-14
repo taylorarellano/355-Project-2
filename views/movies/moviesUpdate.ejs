@@ -5,11 +5,12 @@
 <body>
 <h1>Update <%= movies.title%></h1>
 <form action="/movies/update" method="get">
-    <input type="hidden" id="title" name="title" value="<%= books.title %>">
-    Book Author: <input id="genres" name="genres" type="text" value="<%= books.genres%>">
-    Book Year: <input id="year" name="year" type="text" value="<%= books.year%>">
-    Book Director: <input id="director" name="director" type="text" value="<%= books.director%>"/>
-    Book Book Title: <input id="book_title" name="book_title" type="text" value="<%= books.book_title%>">
+    <input type="hidden" id="title" name="title" value="<%= movies.title %>">
+    Movie Title: <input id="title" name="title" type="text" value="<%= movies.title%>">
+    Movie Genre: <input id="genres" name="genres" type="text" value="<%= movies.genres%>">
+    Movie Year: <input id="year" name="year" type="text" value="<%= movies.year%>">
+    Movie Director: <input id="director" name="director" type="text" value="<%= movies.director%>"/>
+    Movie Book Title: <input id="book_title" name="book_title" type="text" value="<%= movies.book_title%>">
 
     <br />
     <br />
