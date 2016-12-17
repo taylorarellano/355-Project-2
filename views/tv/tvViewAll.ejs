@@ -1,0 +1,23 @@
+<body bgcolor="#e6e6ff">
+<html>
+<head>
+    <title>Tv</title>
+</head>
+<body>
+<h1>Tv</h1>
+<br />
+
+
+<table border="5">
+    <tr><th>Title</th><th>Genre</th><th>Seasons</th><th>Episodes</th><th>Aired Years</th></tr>
+    <% for(var i=0; result.length > i; i++ ) { %>
+    <tr>
+        <td><a href="/tv/?title=<%= result[i].title%>"><%= result[i].title%></a></td>
+        <td><%= result[i].genre %></td><td><%= result[i].seasons %></td> <td><%= result[i].episodes %></td><td><%= result[i].aired_years %></td>
+
+    </tr>
+    <% } %>
+</table>
+</body>
+
+</html>
